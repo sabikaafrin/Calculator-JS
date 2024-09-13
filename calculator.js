@@ -1,34 +1,41 @@
-let firstValue = document.getElementById("first").value;
-let secondValue = document.getElementById("second").value;
-let resultValue = document.getElementById("result");
-let operator = document.getElementById("button").value;
-
-        if (operator === '+') {
-            resultValue = first + second;
-        } 
-        else if (operator === '-') {
-            resultValue = value1 - value2;
-        } else if (multiplyButton === '*') {
-            result = value1 * value2;
-        } else if (divideButton === '/') {
-            result = value1 / value2;
-        }
-        result.value = resultValue;
-
-
-addButton.addEventListener("click", function() {
-    
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+  console.log(key);
+  const validKey = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "+",
+    "-",
+    "*",
+    "/",
+    "%",
+  ];
+  console.log(validKey);
+  if (validKey.includes(key)) {
+    solve(key);
+  } else if (key === "=" || key === "Enter") {
+    result();
+  } else {
+    alert(" key not found");
+  }
 });
-
-subtractButton.addEventListener("click", function() {
-   
-});
-
-multiplyButton.addEventListener("click", function() {
-    calculate('*');
-});
-
-divideButton.addEventListener("click", function() {
-    calculate('/');
-});
-
+function solve(value) {
+  let input = document.getElementById("result");
+  input.value += value;
+}
+function result() {
+  let num1 = document.getElementById("result").value;
+  let num2 = eval(num1);
+  document.getElementById("result").value = num2;
+}
+function clearValue() {
+  document.getElementById("result").value = "";
+}

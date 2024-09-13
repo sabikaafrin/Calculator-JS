@@ -1,29 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="calculator.css">
 </head>
+
 <body>
     <script src="calculator.js"></script>
     <h1>Calculator</h1>
+    <div id="calculator">
+        <div id="output">
+            <input type="text" id="result">
+        </div>
 
-    <div class="input">
-    <input type="number" placeholder="Enter 1st number" id="first">
-    <input type="number" placeholder="Enter 2nd number" id="second">
-    =
-    <input type="text" id="result">
-    </div>
-<div>
-    
-</div>
-    <div class="button">
-        <button id="add">+</button>
-        <button id="subtract">-</button>
-        <button id="multiply">*</button>
-        <button id="divide">/</button>
+        <div id="btn">
+
+            <div class="number">
+                <input type="button" value="1" onclick="solve('1')" id="solve1">
+                <input type="button" value="2" onclick="solve('2')" id="solve1">
+                <input type="button" value="3" onclick="solve('3')" id="solve1">
+                <input type="button" value="4" onclick="solve('4')" id="solve1">
+                <input type="button" value="5" onclick="solve('5')" id="solve1">
+                <input type="button" value="6" onclick="solve('6')" id="solve1">
+                <input type="button" value="7" onclick="solve('7')" id="solve1">
+                <input type="button" value="8" onclick="solve('8')" id="solve1">
+                <input type="button" value="9" onclick="solve('9')" id="solve1">
+                <input type="button" value="0" onclick="solve('0')" id="solve1">
+
+                <input type="button" value="/" onclick="solve('/')" id="operator">
+                <input type="button" value="*" onclick="solve('*')" id="operator">
+
+            </div>
+            <div class="all-operator">
+
+                <input type="button" value="c" onclick="clearValue()" id="clear">
+                <input type="button" value="+" onclick="solve('+')" id="operator">
+                <input type="button" value="-" onclick="solve('-')" id="operator">
+                <input type="button" value="=" onclick="result()" id="equal">
+
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
